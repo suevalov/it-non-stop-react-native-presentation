@@ -1,0 +1,1 @@
+electron-packager <location of project> <name of project> <platform> <architecture> <electron version> <optional options>
