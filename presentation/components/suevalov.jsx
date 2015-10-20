@@ -20,17 +20,18 @@ export default class Suevalov extends Component {
 
   render() {
     return (
-      <div className='suevalovComponent'>
+      <div className="suevalovComponent">
         { this.renderMe() }
         <div>
-          <a href='http://suevalov.com' target='_blank'>
+          <a href="http://suevalov.com" target="_blank">
             http://suevalov.com
           </a>
-          <a href='mailto:suevalov.me@gmail.com'>
+          <a href="mailto:suevalov.me@gmail.com">
             suevalov.me@gmail.com
           </a>
         </div>
       </div>
     );
   }
+
 }

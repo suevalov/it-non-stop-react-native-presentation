@@ -57,16 +57,16 @@ export default class extends React.Component {
               <Cite>Tim Berners-Lee</Cite>
             </BlockQuote>
         </Slide>
-        <Slide bgColor='black'>
-            <Heading size={3} textColor='tertiary' textFont='primary'>
+        <Slide bgColor="black">
+            <Heading size={3} textColor="tertiary" textFont="primary">
                 In other words...
             </Heading>
-            <Heading size={5} textColor='primary' textFont='secondary'>
+            <Heading size={5} textColor="primary" textFont="secondary">
                 Any application that can be written in JavaScript, will eventually be written in JavaScript.
             </Heading>
         </Slide>
-        <Slide bgColor='primary' textColor='darkPrimary'>
-            <Heading size={4} textColor='darkPrimary' textFont='primary'>
+        <Slide bgColor="primary" textColor="darkPrimary">
+            <Heading size={4} textColor="darkPrimary" textFont="primary">
                 The different aspects of JavaScript
             </Heading>
             <div style={{height: '40px'}}></div>
@@ -80,8 +80,8 @@ export default class extends React.Component {
                 <ListItem>Any combination of the above</ListItem>
             </List>
         </Slide>
-        <Slide bgColor='primary' textColor='darkPrimary'>
-            <Heading size={4} textColor='darkPrimary' textFont='primary'>
+        <Slide bgColor="primary" textColor="darkPrimary">
+            <Heading size={4} textColor="darkPrimary" textFont="primary">
                 The different aspects of JavaScript
             </Heading>
             <div style={{height: '40px'}}></div>
@@ -95,10 +95,10 @@ export default class extends React.Component {
                 <ListItem>Any combination of the above</ListItem>
             </List>
         </Slide>
-        <Slide bgColor='primary'>
-            <Image src={images.distribution.replace('/', '')} width='90%' />
+        <Slide bgColor="primary">
+            <Image src={images.distribution.replace('/', '')} width="90%" />
         </Slide>
-        <Slide bgColor='primary'>
+        <Slide bgColor="primary">
             <Layout>
                 <Fill>
                     <div style={{'marginTop': '130px'}}>
@@ -117,18 +117,18 @@ export default class extends React.Component {
                 </Fill>
             </Layout>
         </Slide>
-        <Slide bgColor='primary'>
+        <Slide bgColor="primary">
             <Layout>
                 <Fill>
-                    <Image src={images.logo.replace('/', '')} width='200px' />
-                    <a href='http://electron.atom.io' target='_blank'>
-                        <Text textColor='darkPrimary'>Electron.js</Text>
+                    <Image src={images.logo.replace('/', '')} width="200px" />
+                    <a href="http://electron.atom.io" target="_blank">
+                        <Text textColor="darkPrimary">Electron.js</Text>
                     </a>
                 </Fill>
                 <Fill>
-                    <Image src={images.nwLogo.replace('/', '')} width='200px' />
-                    <a href='http://nwjs.io/' target='_blank'>
-                        <Text textColor='darkPrimary'>NW.js</Text>
+                    <Image src={images.nwLogo.replace('/', '')} width="200px" />
+                    <a href="http://nwjs.io/" target="_blank">
+                        <Text textColor="darkPrimary">NW.js</Text>
                     </a>
                 </Fill>
             </Layout>

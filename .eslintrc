@@ -2,6 +2,7 @@
   "extends": "eslint-config-airbnb",
   "rules": {
     "comma-dangle": 0,
+    "jsx-quotes": 0,
     "react/jsx-quotes": 0,
     "react/sort-comp": 0,
     "func-names": 0,
