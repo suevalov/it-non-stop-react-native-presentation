@@ -1,4 +1,4 @@
-/*global window*/
+/* global window */
 
 import React from "react/addons";
 import tweenState from "react-tween-state";

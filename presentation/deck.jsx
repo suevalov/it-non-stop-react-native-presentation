@@ -12,7 +12,7 @@ import Rectangle from './components/rectangle';
 
 const images = {
   thanks: require('./images/ironman-thanks.gif'),
-  logo: require('./images/electron-logo.png'),
+  logo: require('./images/react-logo.png'),
   nwLogo: require('./images/nw-logo.png'),
   me: require('./images/me.png'),
   timBernens: require('./images/tim-bernens.jpg'),
@@ -35,17 +35,17 @@ export default class extends React.Component {
         <Slide bgColor='primary'>
           <Layout>
             <Fill>
-              <Image src={images.logo.replace('/', '')} width='450px' />
+              <Image src={images.logo.replace('/', '')} width='300px' />
             </Fill>
+          </Layout>
+          <Layout>
             <Fill>
-                <div style={{ 'marginTop': '100px'}}>
-                  <Heading size={3} caps textColor='darkPrimary'>
-                    React Native
-                  </Heading>
-                  <Heading size={6} textColor='darkPrimary'>
-                    Building native applications for iOS and Android
-                  </Heading>
-                </div>
+              <Heading size={1} caps textColor='darkPrimary'>
+                React Native
+              </Heading>
+              <Heading size={6} fontNormal textColor='darkPrimary'>
+                Building native applications for iOS and Android
+              </Heading>
             </Fill>
           </Layout>
           <Suevalov photo={images.me.replace('/', '')} />

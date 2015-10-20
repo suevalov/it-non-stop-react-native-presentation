@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Link } from '../../src/spectacle';
+
 export default class Suevalov extends Component {
 
   static propTypes = {
@@ -23,12 +25,12 @@ export default class Suevalov extends Component {
       <div className="suevalovComponent">
         { this.renderMe() }
         <div>
-          <a href="http://suevalov.com" target="_blank">
+          <Link href="http://suevalov.com">
             http://suevalov.com
-          </a>
-          <a href="mailto:suevalov.me@gmail.com">
+          </Link>
+          <Link href="mailto:suevalov.me@gmail.com">
             suevalov.me@gmail.com
-          </a>
+          </Link>
         </div>
       </div>
     );

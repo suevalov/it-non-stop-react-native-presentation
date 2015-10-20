@@ -1,10 +1,13 @@
-/*eslint max-statements:0,complexity:0,no-invalid-this:0*/
+/* eslint max-statements:0,complexity:0,no-invalid-this:0 */
 import React from "react/addons";
 
 const getStyles = function getStyles() {
   const styles = {};
   if (this.props.italic) {
     styles.fontStyle = "italic";
+  }
+  if (this.props.fontNormal) {
+    styles.fontWeight = "500";
   }
   if (this.props.bold) {
     styles.fontWeight = "bold";
