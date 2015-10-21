@@ -5,7 +5,8 @@ import { register, unregister } from '../../src/steps';
 export default class WhyDoWeLoveNativeApps extends React.Component {
 
   static propTypes = {
-    like: React.PropTypes.string.isRequired
+    like: React.PropTypes.string.isRequired,
+    index: React.PropTypes.number.isRequired
   };
 
   constructor(props) {
@@ -17,7 +18,7 @@ export default class WhyDoWeLoveNativeApps extends React.Component {
   }
 
   componentWillMount() {
-    register(1, {
+    register(this.props.index, {
       prev: () => {
         if (this.state.step > 0) {
           this.setState({ step: this.state.step - 1 });
@@ -36,7 +37,7 @@ export default class WhyDoWeLoveNativeApps extends React.Component {
   }
 
   componentWillUnmount() {
-    unregister(1);
+    unregister(this.props.index);
   }
 
   render() {
@@ -46,7 +47,6 @@ export default class WhyDoWeLoveNativeApps extends React.Component {
           <Heading size={2} textColor='darkPrimary'>Why do we</Heading>
           <Image src={this.props.like} width='30%' />
           <Heading size={2} textColor='darkPrimary'>native apps?</Heading>
-          <div>Step: { this.state.step }</div>
         </Fill>
       </Layout>
     );

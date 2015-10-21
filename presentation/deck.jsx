@@ -42,6 +42,7 @@ export default class extends React.Component {
         </Slide>
         <Slide bgColor='light'>
           <Slides.WhyDoWeLoveNativeApps
+            index={1}
             like={images.like.replace('/', '')}
             />
         </Slide>
