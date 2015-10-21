@@ -1,11 +1,10 @@
-/*eslint new-cap:0, max-statements:0*/
-/*global window document localStorage*/
+/* eslint new-cap:0, max-statements:0, react/no-did-mount-set-state:0 */
+/* global window document localStorage */
 
 import React from "react/addons";
 import assign from "object-assign";
 import cloneWithProps from "react/lib/cloneWithProps";
 import Radium from "radium";
-import _ from "lodash";
 import Presenter from "./presenter";
 import Export from "./export";
 import Overview from "./overview";
@@ -78,9 +77,8 @@ class Deck extends React.Component {
       return "?presenter";
     } else if (this.context.overview) {
       return "?overview";
-    } else {
-      return "";
     }
+    return "";
   }
   _goToSlide(e) {
     if (e.key === "spectacle-slide") {
@@ -89,9 +87,7 @@ class Deck extends React.Component {
       this.setState({
         lastSlide: slide || 0
       });
-      if (this._checkFragments(this.context.slide, data.forward)) {
-        this.context.router.replaceWith("/" + (data.slide) + this._getSuffix());
-      }
+      this.context.router.replaceWith("/" + (data.slide) + this._getSuffix());
     }
   }
   _prevSlide() {
@@ -99,15 +95,10 @@ class Deck extends React.Component {
     this.setState({
       lastSlide: slide
     });
-    if (this._checkFragments(this.context.slide, false) || this.context.overview) {
-      if (slide > 0) {
-        this.context.router.replaceWith("/" + this._getHash(slide - 1) + this._getSuffix());
-        localStorage.setItem("spectacle-slide",
-          JSON.stringify({slide: this._getHash(slide - 1), forward: false, time: Date.now()}));
-      }
-    } else if (slide > 0) {
+    if (slide > 0) {
+      this.context.router.replaceWith("/" + this._getHash(slide - 1) + this._getSuffix());
       localStorage.setItem("spectacle-slide",
-        JSON.stringify({slide: this._getHash(slide), forward: false, time: Date.now()}));
+        JSON.stringify({slide: this._getHash(slide - 1), forward: false, time: Date.now()}));
     }
   }
   _nextSlide() {
@@ -115,15 +106,10 @@ class Deck extends React.Component {
     this.setState({
       lastSlide: slide
     });
-    if (this._checkFragments(this.context.slide, true) || this.context.overview) {
-      if (slide < this.props.children.length - 1) {
-        this.context.router.replaceWith("/" + this._getHash(slide + 1) + this._getSuffix());
-        localStorage.setItem("spectacle-slide",
-          JSON.stringify({slide: this._getHash(slide + 1), forward: true, time: Date.now()}));
-      }
-    } else if (slide < this.props.children.length - 1) {
+    if (slide < this.props.children.length - 1) {
+      this.context.router.replaceWith("/" + this._getHash(slide + 1) + this._getSuffix());
       localStorage.setItem("spectacle-slide",
-        JSON.stringify({slide: this._getHash(slide), forward: true, time: Date.now()}));
+        JSON.stringify({slide: this._getHash(slide + 1), forward: true, time: Date.now()}));
     }
   }
   _getHash(slide) {
@@ -132,48 +118,6 @@ class Deck extends React.Component {
       hash = this.props.children[slide].props.id;
     }
     return hash;
-  }
-  _checkFragments(slide, forward) {
-    const store = this.context.flux.stores.SlideStore;
-    const fragments = store.getState().fragments;
-    // Not proud of this at all. 0.14 Parent based contexts will fix this.
-    if (this.context.presenter) {
-      const main = document.querySelector(".spectacle-presenter-main");
-      if (main) {
-        const frags = main.querySelectorAll(".fragment");
-        if (!frags.length) {
-          return true;
-        }
-      } else {
-        return true;
-      }
-    }
-    if (slide in fragments) {
-      const count = _.size(fragments[slide]);
-      const visible = _.filter(fragments[slide], function (s) {
-        return s.visible === true;
-      });
-      const hidden = _.filter(fragments[slide], function (s) {
-        return s.visible !== true;
-      });
-      if (forward === true && visible.length !== count) {
-        this.context.flux.actions.SlideActions.updateFragment({
-          fragment: hidden[0],
-          visible: true
-        });
-        return false;
-      }
-      if (forward === false && hidden.length !== count) {
-        this.context.flux.actions.SlideActions.updateFragment({
-          fragment: visible[_.size(visible) - 1],
-          visible: false
-        });
-        return false;
-      }
-      return true;
-    } else {
-      return true;
-    }
   }
   _getTouchEvents() {
     const self = this;
@@ -261,14 +205,14 @@ class Deck extends React.Component {
   }
   _getSlideIndex() {
     let index = 0;
-    if (!parseInt(this.context.slide)) {
+    if (!parseInt(this.context.slide, 10)) {
       this.props.children.forEach((slide, i) => {
         if (slide.props.id === this.context.slide) {
           index = i;
         }
       });
     } else {
-      index = parseInt(this.context.slide);
+      index = parseInt(this.context.slide, 10);
     }
     return index;
   }

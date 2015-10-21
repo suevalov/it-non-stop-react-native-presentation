@@ -1,4 +1,3 @@
-import Appear from "./appear";
 import BlockQuote from "./block-quote";
 import Cite from "./cite";
 import CodePane from "./code-pane";
@@ -18,7 +17,6 @@ import Slide from "./slide";
 import Text from "./text";
 
 export {
-  Appear,
   BlockQuote,
   Cite,
   CodePane,
