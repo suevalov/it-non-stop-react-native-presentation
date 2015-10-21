@@ -8,6 +8,7 @@ import Radium from "radium";
 import Presenter from "./presenter";
 import Export from "./export";
 import Overview from "./overview";
+import { nextStep, prevStep } from './steps';
 
 React.initializeTouchEvents(true);
 
@@ -95,10 +96,12 @@ class Deck extends React.Component {
     this.setState({
       lastSlide: slide
     });
-    if (slide > 0) {
-      this.context.router.replaceWith("/" + this._getHash(slide - 1) + this._getSuffix());
-      localStorage.setItem("spectacle-slide",
-        JSON.stringify({slide: this._getHash(slide - 1), forward: false, time: Date.now()}));
+    if (prevStep(slide)) {
+      if (slide > 0) {
+        this.context.router.replaceWith("/" + this._getHash(slide - 1) + this._getSuffix());
+        localStorage.setItem("spectacle-slide",
+          JSON.stringify({slide: this._getHash(slide - 1), forward: false, time: Date.now()}));
+      }
     }
   }
   _nextSlide() {
@@ -106,10 +109,12 @@ class Deck extends React.Component {
     this.setState({
       lastSlide: slide
     });
-    if (slide < this.props.children.length - 1) {
-      this.context.router.replaceWith("/" + this._getHash(slide + 1) + this._getSuffix());
-      localStorage.setItem("spectacle-slide",
-        JSON.stringify({slide: this._getHash(slide + 1), forward: true, time: Date.now()}));
+    if (nextStep(slide)) {
+      if (slide < this.props.children.length - 1) {
+        this.context.router.replaceWith("/" + this._getHash(slide + 1) + this._getSuffix());
+        localStorage.setItem("spectacle-slide",
+          JSON.stringify({slide: this._getHash(slide + 1), forward: true, time: Date.now()}));
+      }
     }
   }
   _getHash(slide) {
