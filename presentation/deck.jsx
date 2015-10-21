@@ -5,14 +5,16 @@ import {
   Heading, Image, Layout, ListItem, List, Quote, Slide, Text
 } from '../src/spectacle';
 
+import * as Slides from './slides/index';
+
 import preloader from '../src/utils/preloader';
 
-import Suevalov from './components/suevalov';
 import Rectangle from './components/rectangle';
 
 const images = {
   thanks: require('./images/ironman-thanks.gif'),
   logo: require('./images/react-logo.png'),
+  like: require('./images/like-icon.png'),
   nwLogo: require('./images/nw-logo.png'),
   me: require('./images/me.png'),
   timBernens: require('./images/tim-bernens.jpg'),
@@ -31,24 +33,17 @@ preloader([images.me, images.timBernens, images.logo, images.thanks]);
 export default class extends React.Component {
   render() {
     return (
-      <Deck transition={['fade']} transitionDuration={800}>
+      <Deck transition={['fade']} transitionDuration={800} progress='bar'>
         <Slide bgColor='primary'>
-          <Layout>
-            <Fill>
-              <Image src={images.logo.replace('/', '')} width='300px' />
-            </Fill>
-          </Layout>
-          <Layout>
-            <Fill>
-              <Heading size={1} caps textColor='darkPrimary'>
-                React Native
-              </Heading>
-              <Heading size={6} fontNormal textColor='darkPrimary'>
-                Building native applications for iOS and Android
-              </Heading>
-            </Fill>
-          </Layout>
-          <Suevalov photo={images.me.replace('/', '')} />
+          <Slides.Intro
+            logo={images.logo.replace('/', '')}
+            photo={images.me.replace('/', '')}
+            />
+        </Slide>
+        <Slide bgColor='light'>
+          <Slides.WhyDoWeLoveNativeApps
+            like={images.like.replace('/', '')}
+            />
         </Slide>
         <Slide bgColor='black'>
             <Image src={images.timBernens.replace('/', '')} margin='0px auto 40px' height='293px'/>
@@ -56,14 +51,6 @@ export default class extends React.Component {
               <Quote>The "Rule of Least Power" suggests choosing the least powerful language suitable for a given purpose</Quote>
               <Cite>Tim Berners-Lee</Cite>
             </BlockQuote>
-        </Slide>
-        <Slide bgColor="black">
-            <Heading size={3} textColor="tertiary" textFont="primary">
-                In other words...
-            </Heading>
-            <Heading size={5} textColor="primary" textFont="secondary">
-                Any application that can be written in JavaScript, will eventually be written in JavaScript.
-            </Heading>
         </Slide>
         <Slide bgColor="primary" textColor="darkPrimary">
             <Heading size={4} textColor="darkPrimary" textFont="primary">

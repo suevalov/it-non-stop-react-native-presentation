@@ -2,7 +2,7 @@ const colors = {
   primary: '#A9ECF8',
   darkPrimary: '#49848E',
   secondary: 'black',
-  tertiary: 'white'
+  light: '#f2f2f2'
 };
 
 const fonts = {
@@ -81,16 +81,16 @@ module.exports = {
     bar: {
       container: {
         position: 'absolute',
-        height: '10px',
+        height: '4px',
         width: '100%',
-        bottom: 0,
+        top: 0,
         left: 0,
         transition: 'all 1s ease-in-out 0.2s',
         zIndex: 1000
       },
       bar: {
         height: '100%',
-        background: colors.tertiary,
+        background: colors.darkPrimary,
         transition: 'all 0.3s ease-out'
       }
     },
@@ -100,7 +100,7 @@ module.exports = {
         bottom: 10,
         right: 10,
         zIndex: 1000,
-        color: colors.tertiary
+        color: colors.light
       }
     }
   },
@@ -120,7 +120,7 @@ module.exports = {
       fontWeight: 'bold'
     },
     cite: {
-      color: colors.tertiary,
+      color: colors.light,
       display: 'block',
       clear: 'left',
       fontSize: '2em',
@@ -156,7 +156,7 @@ module.exports = {
     },
     heading: {
       h1: {
-        color: colors.tertiary,
+        color: colors.light,
         fontSize: '7.05em',
         fontFamily: fonts.primary,
         lineHeight: 1,
