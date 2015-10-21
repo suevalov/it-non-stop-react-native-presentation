@@ -4,18 +4,12 @@ import context from './src/utils/context';
 import {Router, Route} from 'react-router';
 import HashHistory from 'react-router/lib/HashHistory';
 
-import Alt from 'alt';
-import Flux from './src/flux/alt';
-
 import Deck from './presentation/deck';
 import config from './presentation/config';
 
 require('normalize.css');
 require('./themes/default/index.css');
 require('highlight.js/styles/monokai_sublime.css');
-
-const flux = new Flux();
-Alt.debug('flux', flux);
 
 class Presentation extends React.Component {
   render() {
@@ -27,7 +21,7 @@ Presentation.contextTypes = {
   router: React.PropTypes.object
 };
 
-Presentation = context(Presentation, {styles: config.theme, flux});
+Presentation = context(Presentation, {styles: config.theme});
 
 React.render(
   <Router history={new HashHistory()}>

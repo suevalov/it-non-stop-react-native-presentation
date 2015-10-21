@@ -9,7 +9,6 @@ const context = function context(Component, params) {
     },
     childContextTypes: {
       styles: React.PropTypes.object,
-      flux: React.PropTypes.object,
       presenter: React.PropTypes.bool,
       overview: React.PropTypes.bool,
       export: React.PropTypes.bool,
@@ -30,7 +29,6 @@ const context = function context(Component, params) {
       }
       return {
         styles,
-        flux: params.flux,
         presenter: location.query && "presenter" in location.query,
         overview: location.query && "overview" in location.query,
         export: location.query && "export" in location.query,

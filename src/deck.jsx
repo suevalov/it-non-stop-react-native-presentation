@@ -306,7 +306,6 @@ Deck.propTypes = {
 Deck.contextTypes = {
   styles: React.PropTypes.object,
   router: React.PropTypes.object,
-  flux: React.PropTypes.object,
   presenter: React.PropTypes.bool,
   export: React.PropTypes.bool,
   overview: React.PropTypes.bool,
