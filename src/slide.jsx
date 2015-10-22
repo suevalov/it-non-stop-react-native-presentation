@@ -12,6 +12,7 @@ const Slide = React.createClass({
   mixins: [tweenState.Mixin, Base.Mixin, Transitions],
   getDefaultProps() {
     return {
+      logo: true,
       align: "center center",
       presenterStyle: {}
     };

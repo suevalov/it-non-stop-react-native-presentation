@@ -14,6 +14,7 @@ export function register(slideIndex, { prev, next }) {
 }
 
 export function unregister(slideIndex) {
+  console.log(`unregister ${slideIndex}`);
   slideSteps = _.omit(slideSteps, slideIndex);
 }
 

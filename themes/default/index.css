@@ -3,6 +3,17 @@
           transform-origin: center center;
 }
 
+/* font-family: "SegoeUILight"; */
+@font-face {
+    font-family: "SegoeUILight";
+    src: url("./fonts/SegoeUILight.eot");
+    src: url("./fonts/SegoeUILight.eot?#iefix")format("embedded-opentype"),
+    url("./fonts/SegoeUILight.woff") format("woff"),
+    url("./fonts/SegoeUILight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
 * {
   -webkit-font-smoothing: antialiased;
 }

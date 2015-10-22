@@ -1,5 +1,6 @@
 const colors = {
   primary: '#A9ECF8',
+  yellowTheme: '#fbd152',
   darkPrimary: '#49848E',
   secondary: 'black',
   light: '#f2f2f2'
@@ -8,7 +9,8 @@ const colors = {
 const fonts = {
   primary: 'Source Sans Pro',
   secondary: 'Open Sans Condensed',
-  tertiary: 'monospace'
+  tertiary: 'monospace',
+  segoe: 'SegoeUILight'
 };
 
 module.exports = {
@@ -17,10 +19,10 @@ module.exports = {
   global: {
     body: {
       background: colors.primary,
-      fontFamily: fonts.primary,
+      fontFamily: fonts.segoe,
       fontWeight: 'normal',
       fontSize: '2em',
-      color: colors.secondary,
+      color: colors.darkPrimary,
       overflow: 'hidden'
     },
     'html, body': {
@@ -158,7 +160,7 @@ module.exports = {
       h1: {
         color: colors.light,
         fontSize: '7.05em',
-        fontFamily: fonts.primary,
+        fontFamily: fonts.segoe,
         lineHeight: 1,
         fontWeight: '300',
         margin: 0,
@@ -167,7 +169,7 @@ module.exports = {
       h2: {
         color: colors.secondary,
         fontSize: '5.88em',
-        fontFamily: fonts.primary,
+        fontFamily: fonts.segoe,
         lineHeight: 1,
         fontWeight: '300',
         margin: 0
@@ -175,7 +177,7 @@ module.exports = {
       h3: {
         color: 'black',
         fontSize: '4.9em',
-        fontFamily: fonts.secondary,
+        fontFamily: fonts.segoe,
         lineHeight: 1,
         fontWeight: '300',
         margin: '0.5em auto'
@@ -183,7 +185,7 @@ module.exports = {
       h4: {
         color: 'black',
         fontSize: '3.82em',
-        fontFamily: fonts.primary,
+        fontFamily: fonts.segoe,
         lineHeight: 1,
         fontWeight: '300',
         margin: '0.5em auto'
@@ -191,7 +193,7 @@ module.exports = {
       h5: {
         color: 'black',
         fontSize: '3.19em',
-        fontFamily: fonts.primary,
+        fontFamily: fonts.segoe,
         lineHeight: 1.4,
         fontWeight: '300',
         margin: '0.5em auto'
@@ -199,7 +201,7 @@ module.exports = {
       h6: {
         color: 'black',
         fontSize: '2.44em',
-        fontFamily: fonts.primary,
+        fontFamily: fonts.segoe,
         lineHeight: 1.4,
         fontWeight: '300',
         margin: '0.5em auto'
@@ -227,7 +229,7 @@ module.exports = {
     text: {
       color: 'black',
       fontSize: '2.66em',
-      fontFamily: fonts.primary,
+      fontFamily: fonts.segoe,
       margin: '0.25em auto'
     }
   }

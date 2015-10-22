@@ -23,7 +23,7 @@ export default class IntroSlide extends React.Component {
               React Native
             </Heading>
             <Heading size={6} fontNormal textColor='darkPrimary'>
-              Building native applications for iOS and Android
+              Создаем нативные приложения для iOS и Android
             </Heading>
           </Fill>
         </Layout>
