@@ -5,4 +5,6 @@ export BuildingNativeAppsIsHard from './builging-native-apps-is-hard.jsx';
 export BulletHardNativeApps from './bullet-hard-native-apps.jsx';
 export WebSolvesThisProblem from './web-solves-this-problem.jsx';
 export HowWebSolvedTheProblems from './how-web-solved-problems.jsx';
+export WebBrowser from './web-browser.jsx';
+export UserExperinceOrDeveloperVelocity from './user-experience-or-developer-velocity.jsx';
 export FinalSlide from './final-slide.jsx';
