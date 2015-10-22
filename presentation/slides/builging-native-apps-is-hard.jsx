@@ -13,7 +13,6 @@ export default class BuildingNativeAppsIsHard extends React.Component {
   };
 
   render() {
-
     const { step } = this.props;
 
     return (
@@ -30,7 +29,6 @@ export default class BuildingNativeAppsIsHard extends React.Component {
           </Heading>
         </VelocityComponent>
       </div>
-
     );
   }
 

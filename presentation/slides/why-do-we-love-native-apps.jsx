@@ -11,7 +11,7 @@ export default class WhyDoWeLoveNativeApps extends React.Component {
     return (
       <Layout>
         <Fill>
-          <Heading size={2} textColor='darkPrimary'>Почему нам так</Heading>
+          <Heading size={2} textColor='darkPrimary'>Почему нам так нравятся</Heading>
           <Image src={this.props.like} width='30%' />
           <Heading size={2} textColor='darkPrimary'>нативные приложения?</Heading>
         </Fill>
