@@ -40,8 +40,14 @@ export default (maxStep) => {
           unregister(this.props.index);
         }
 
+        onUpdateStep = (step) => {
+          if (step >= 0 && step <= this.state.maxStep) {
+            this.setState({ step });
+          }
+        }
+
         render() {
-          return <DecoratedComponent {...this.props} step={this.state.step} />;
+          return <DecoratedComponent {...this.props} step={this.state.step} onUpdateStep={this.onUpdateStep} />;
         }
 
     };

@@ -1,15 +1,47 @@
 import React from 'react';
 import { Row, Col } from 'elemental';
 import { Heading, Image, List, ListItem } from '../../src/spectacle';
+import { VelocityComponent } from 'velocity-react';
 import stepped from '../stepped';
 
-@stepped(4)
+@stepped(2)
 export default class BulletLoveNativeApps extends React.Component {
 
   static propTypes = {
     step: React.PropTypes.number.isRequired,
+    onUpdateStep: React.PropTypes.func.isRequired,
     image: React.PropTypes.string.isRequired
   };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.onUpdateStep(this.props.step + 1);
+    }, 700);
+  }
+
+  renderImage() {
+    return (
+      <VelocityComponent
+        animation={{
+          opacity: this.props.step > 0 ? 1 : 0,
+          marginRight: this.props.step > 0 ? '0' : '-50'
+        }}
+        duration={500}>
+        <Image src={this.props.image} width="100%"/>
+      </VelocityComponent>
+    );
+  }
+
+  renderBullets() {
+    return (
+      <List>
+        <ListItem>Быстрые и отзывчивые</ListItem>
+        <ListItem>Сложные жесты</ListItem>
+        <ListItem>Нетривиальные анимации</ListItem>
+        <ListItem>Консистентный UI</ListItem>
+      </List>
+    );
+  }
 
   render() {
     return (
@@ -21,15 +53,10 @@ export default class BulletLoveNativeApps extends React.Component {
         </Row>
         <Row>
           <Col xs='2/3'>
-            <List>
-              { this.props.step >= 0 ? <ListItem>Быстрые и отзывчивые</ListItem> : null }
-              { this.props.step >= 1 ? <ListItem>Сложные жесты</ListItem> : null }
-              { this.props.step >= 2 ? <ListItem>Нетривиальные анимации</ListItem> : null }
-              { this.props.step >= 3 ? <ListItem>Консистентный UI</ListItem> : null }
-            </List>
+            { this.renderBullets() }
           </Col>
           <Col xs='1/3'>
-            <Image src={this.props.image} width='100%' />
+            { this.renderImage() }
           </Col>
         </Row>
       </div>

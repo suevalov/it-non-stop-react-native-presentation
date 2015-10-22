@@ -12,18 +12,8 @@ const images = {
   logo: require('./images/react-logo.png'),
   like: require('./images/like-icon.png'),
   nativeApps: require('./images/native-apps.png'),
-  consistentUI: require('./images/consistent-ui.jpg'),
-  nwLogo: require('./images/nw-logo.png'),
-  me: require('./images/me.png'),
-  timBernens: require('./images/tim-bernens.jpg'),
-  distribution: require('./images/distribution.png'),
-  prefer: require('./images/prefer.jpg'),
-  electronApps: require('./images/electron-apps.png'),
-  mainProcess: require('./images/main-process.png'),
-  appStructure: require('./images/application-structure.png'),
-  runHelloWorld: require('./images/run-hello-world.gif'),
-  subscribeSchema: require('./images/subscribe-schema.png'),
-  modules: require('./images/modules.png')
+  buildingNativeApps: require('./images/building-native-apps.jpeg'),
+  me: require('./images/me.png')
 };
 
 preloader([images.splash, images.me, images.logo, images.thanks]);
@@ -67,10 +57,18 @@ const slides = [
       image: images.nativeApps.replace('/', '')
     }
   },
-  // Consistent UI
   {
+    component: Slides.BuildingNativeAppsIsHard,
     slideProps: {
-      bgImage: images.consistentUI.replace('/', '')
+      bgImage: images.buildingNativeApps.replace('/', ''),
+      bgDarken: 0.7
+    }
+  },
+  {
+    component: Slides.FinalSlide,
+    slideProps: {
+      bgImage: images.thanks.replace('/', ''),
+      bgDarken: 0.6
     }
   }
 ];
