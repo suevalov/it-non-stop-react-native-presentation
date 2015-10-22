@@ -14,7 +14,10 @@ const images = {
   nativeApps: require('./images/native-apps.png'),
   buildingNativeApps: require('./images/building-native-apps.jpeg'),
   me: require('./images/me.png'),
-  phones: require('./images/ios-android.png')
+  phones: require('./images/ios-android.png'),
+  webHero: require('./images/web-superhero.png'),
+  splitBackground: require('./images/split-background.png'),
+  htmlCssJS: require('./images/html-js-css.png')
 };
 
 preloader([images.splash, images.me, images.logo, images.thanks]);
@@ -72,6 +75,24 @@ const slides = [
     },
     props: {
       image: images.phones.replace('/', '')
+    }
+  },
+  {
+    component: Slides.WebSolvesThisProblem,
+    slideProps: {
+      bgColor: 'darkPrimary'
+    },
+    props: {
+      image: images.webHero.replace('/', '')
+    }
+  },
+  {
+    component: Slides.HowWebSolvedTheProblems,
+    slideProps: {
+      bgImage: images.splitBackground.replace('/', '')
+    },
+    props: {
+      image: images.htmlCssJS.replace('/', '')
     }
   },
   {

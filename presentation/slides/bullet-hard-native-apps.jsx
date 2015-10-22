@@ -4,7 +4,7 @@ import { Row, Col } from 'elemental';
 import stepped from '../stepped';
 import { VelocityComponent } from 'velocity-react';
 
-@stepped(6)
+@stepped(5)
 export default class BulletHardNativeApps extends React.Component {
 
   static propTypes = {
@@ -62,21 +62,6 @@ export default class BulletHardNativeApps extends React.Component {
           }}
           duration={500}>
           <ListItem>Билд на каждое изменение</ListItem>
-        </VelocityComponent>
-        <VelocityComponent
-          animation={{
-            opacity: (() => {
-              if (step < 4) {
-                return 0;
-              }
-              if (step === 4 || step === 5) {
-                return 1;
-              }
-              return 0.3;
-            }())
-          }}
-          duration={500}>
-          <ListItem>Медленная скорость итераций</ListItem>
         </VelocityComponent>
       </List>
     );

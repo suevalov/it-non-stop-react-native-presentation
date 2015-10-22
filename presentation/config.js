@@ -1,5 +1,5 @@
 module.exports = {
-  width: 1100,
+  width: 1400,
   height: 800,
   margin: 40,
   theme: require('../themes/default/index'),
