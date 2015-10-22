@@ -215,8 +215,9 @@ module.exports = {
       textDecoration: 'none'
     },
     listItem: {
-      fontSize: '2.66em',
-      fontWeight: '300'
+      fontSize: '2.96em',
+      fontWeight: '500',
+      marginBottom: '10px'
     },
     list: {
       textAlign: 'left',

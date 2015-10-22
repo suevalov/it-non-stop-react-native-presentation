@@ -13,7 +13,8 @@ const images = {
   like: require('./images/like-icon.png'),
   nativeApps: require('./images/native-apps.png'),
   buildingNativeApps: require('./images/building-native-apps.jpeg'),
-  me: require('./images/me.png')
+  me: require('./images/me.png'),
+  phones: require('./images/ios-android.png')
 };
 
 preloader([images.splash, images.me, images.logo, images.thanks]);
@@ -62,6 +63,15 @@ const slides = [
     slideProps: {
       bgImage: images.buildingNativeApps.replace('/', ''),
       bgDarken: 0.7
+    }
+  },
+  {
+    component: Slides.BulletHardNativeApps,
+    slideProps: {
+      bgColor: 'light'
+    },
+    props: {
+      image: images.phones.replace('/', '')
     }
   },
   {
