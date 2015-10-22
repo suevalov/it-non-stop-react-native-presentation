@@ -7,4 +7,8 @@ export WebSolvesThisProblem from './web-solves-this-problem.jsx';
 export HowWebSolvedTheProblems from './how-web-solved-problems.jsx';
 export WebBrowser from './web-browser.jsx';
 export UserExperinceOrDeveloperVelocity from './user-experience-or-developer-velocity.jsx';
+export BothAreImportant from './both-is-important.jsx';
+export ReactJSFramework from './react-js-framework.jsx';
+export CountExample from './count-example.jsx';
+export CountFunction1 from './count-function-1.jsx';
 export FinalSlide from './final-slide.jsx';

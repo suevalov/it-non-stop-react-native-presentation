@@ -1,7 +1,13 @@
 import React from 'react';
 import { Row, Col } from 'elemental';
-import { Heading } from '../../src/spectacle';
+import { Heading, Image } from '../../src/spectacle';
+import { VelocityComponent } from 'velocity-react';
+import stepped from '../stepped';
 
+const bluePill = require('../images/blue-pill.png');
+const redPill = require('../images/red-pill.png');
+
+@stepped(3)
 export default class UserExperinceOrDeveloperVelocity extends React.Component {
 
   static propTypes = {
@@ -16,10 +22,13 @@ export default class UserExperinceOrDeveloperVelocity extends React.Component {
         textColor: 'light'
       },
       or: {
-        size: 5,
+        size: 1,
+        caps: true,
         textColor: 'light',
         style: {
-          fontWeight: 'bold'
+          fontSize: '16em',
+          fontWeight: 'bold',
+          marginTop: '160px'
         }
       }
     };
@@ -27,19 +36,35 @@ export default class UserExperinceOrDeveloperVelocity extends React.Component {
     return (
       <Row>
         <Col xs='40%'>
-          <Heading {...styles.version}>
-            User Experience
-          </Heading>
+          <VelocityComponent
+            animation={{
+              opacity: this.props.step > 0 ? 1 : 0
+            }}>
+            <div>
+              <Heading {...styles.version}>
+                User Experience
+              </Heading>
+              <Image src={bluePill.replace('/', '')} width='60%'/>
+            </div>
+          </VelocityComponent>
         </Col>
         <Col xs='20%'>
           <Heading {...styles.or}>
-            или
+            ?
           </Heading>
         </Col>
         <Col xs='40%'>
-          <Heading {...styles.version}>
-            Developer Experience
-          </Heading>
+          <VelocityComponent
+            animation={{
+              opacity: this.props.step > 1 ? 1 : 0
+            }}>
+            <div>
+              <Heading {...styles.version}>
+                Developer Experience
+              </Heading>
+              <Image src={redPill.replace('/', '')} width='60%' />
+            </div>
+          </VelocityComponent>
         </Col>
       </Row>
     );

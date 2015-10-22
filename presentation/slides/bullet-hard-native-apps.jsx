@@ -24,7 +24,7 @@ export default class BulletHardNativeApps extends React.Component {
               if (step < 1) {
                 return 0;
               }
-              if (step === 1 || step === 5) {
+              if (step === 1 || step === 4) {
                 return 1;
               }
               return 0.3;
@@ -39,7 +39,7 @@ export default class BulletHardNativeApps extends React.Component {
               if (step < 2) {
                 return 0;
               }
-              if (step === 2 || step === 5) {
+              if (step === 2 || step === 4) {
                 return 1;
               }
               return 0.3;
@@ -54,7 +54,7 @@ export default class BulletHardNativeApps extends React.Component {
               if (step < 3) {
                 return 0;
               }
-              if (step === 3 || step === 5) {
+              if (step === 3 || step === 4) {
                 return 1;
               }
               return 0.3;

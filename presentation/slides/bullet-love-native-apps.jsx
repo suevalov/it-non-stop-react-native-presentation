@@ -13,12 +13,6 @@ export default class BulletLoveNativeApps extends React.Component {
     image: React.PropTypes.string.isRequired
   };
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.props.onUpdateStep(this.props.step + 1);
-    }, 700);
-  }
-
   renderImage() {
     return (
       <VelocityComponent

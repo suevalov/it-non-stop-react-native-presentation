@@ -17,6 +17,7 @@ const images = {
   phones: require('./images/ios-android.png'),
   webHero: require('./images/web-superhero.png'),
   splitBackground: require('./images/split-background.png'),
+  reactNativeBackground: require('./images/react-native-background.jpg'),
   htmlCssJS: require('./images/html-js-css.png')
 };
 
@@ -105,6 +106,35 @@ const slides = [
     component: Slides.UserExperinceOrDeveloperVelocity,
     slideProps: {
       bgColor: 'darkPrimary'
+    }
+  },
+  {
+    component: Slides.BothAreImportant,
+    slideProps: {
+      bgColor: 'darkPrimary'
+    }
+  },
+  {
+    slideProps: {
+      bgImage: images.reactNativeBackground.replace('/', '')
+    }
+  },
+  {
+    component: Slides.ReactJSFramework,
+    slideProps: {
+      bgColor: 'primary'
+    }
+  },
+  {
+    component: Slides.CountExample,
+    slideProps: {
+      bgColor: 'light'
+    }
+  },
+  {
+    component: Slides.CountFunction1,
+    slideProps: {
+      bgColor: '#F9F6ED'
     }
   },
   {
