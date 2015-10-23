@@ -14,7 +14,7 @@ export default class IntroSlide extends React.Component {
       <div>
         <Layout>
           <Fill>
-            <Image src={this.props.logo} width='300px' />
+            <Image src={this.props.logo} width='270px' />
           </Fill>
         </Layout>
         <Layout>

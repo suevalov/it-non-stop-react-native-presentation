@@ -10,13 +10,15 @@ export default class Suevalov extends Component {
 
   renderMe() {
     const styles = {
-      'margin': '20px auto',
-      'width': '100px',
-      'height': '100px',
+      'margin': '10px auto',
+      'width': '130px',
+      'height': '130px',
       'borderRadius': '60px'
     };
     return (
-        <img src={this.props.photo} style={styles} />
+        <div style={{ display: 'inline-block', width: '400px' }}>
+          <img src={this.props.photo} style={styles} />
+        </div>
     );
   }
 
@@ -26,10 +28,12 @@ export default class Suevalov extends Component {
         { this.renderMe() }
         <div>
           <Link href="http://suevalov.com">
-            http://suevalov.com
+            Александр Суевалов&nbsp;&nbsp;&nbsp;http://suevalov.com/
           </Link>
-          <Link href="mailto:suevalov.me@gmail.com">
-            suevalov.me@gmail.com
+        </div>
+        <div>
+          <Link href="http://dataart.com/">
+            DataArt
           </Link>
         </div>
       </div>
