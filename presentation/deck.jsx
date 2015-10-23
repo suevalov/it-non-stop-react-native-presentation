@@ -8,6 +8,7 @@ import preloader from '../src/utils/preloader';
 
 const images = {
   splash: require('./images/splash.png'),
+  questions: require('./images/questions.png'),
   thanks: require('./images/ironman-thanks.gif'),
   logo: require('./images/react-logo.png'),
   like: require('./images/like-icon.png'),
@@ -138,10 +139,76 @@ const slides = [
     }
   },
   {
+    component: Slides.ReactIsAbstract,
+    slideProps: {
+      bgColor: 'light'
+    }
+  },
+  {
+    component: Slides.ReactIsAbstract2,
+    slideProps: {
+      bgColor: 'light'
+    }
+  },
+  {
+    component: Slides.NotWriteOnce,
+    slideProps: {
+      bgColor: 'darkPrimary'
+    }
+  },
+  {
+    component: Slides.LearnOnce,
+    slideProps: {
+      bgColor: 'darkPrimary'
+    }
+  },
+  {
+    component: Slides.Tags,
+    slideProps: {
+      bgColor: 'light'
+    }
+  },
+  {
+    component: Slides.ReactStyles,
+    slideProps: {
+      bgColor: 'light'
+    }
+  },
+  {
+    component: Slides.TwoWaysToDiffer,
+    slideProps: {
+      bgColor: 'darkPrimary'
+    }
+  },
+  {
+    component: Slides.ReactBenefits,
+    slideProps: {
+      bgColor: 'light'
+    }
+  },
+  {
+    component: Slides.FacebookAdsManager,
+    slideProps: {
+      bgColor: 'light'
+    }
+  },
+  {
+    component: Slides.DemoTime,
+    slideProps: {
+      bgColor: 'light'
+    }
+  },
+  {
     component: Slides.FinalSlide,
     slideProps: {
       bgImage: images.thanks.replace('/', ''),
       bgDarken: 0.6
+    }
+  },
+  {
+    slideProps: {
+      bgColor: 'yellowTheme',
+      bgImage: images.questions.replace('/', '')
     }
   }
 ];
