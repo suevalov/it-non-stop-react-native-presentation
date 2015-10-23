@@ -1,7 +1,8 @@
-import React from 'react/addons';
-import assign from 'object-assign';
-import Base from './base';
-import Radium from 'radium';
+/*global window*/
+
+import React from "react/addons";
+import Base from "./base";
+import Radium from "radium";
 
 @Radium
 class Heading extends Base {
@@ -9,78 +10,85 @@ class Heading extends Base {
     super(props);
     this.resize = this.resize.bind(this);
     this.state = {
-      width: 256,
-      height: 24
+      scale: 1,
+      height: 16
     };
   }
-  componentDidMount () {
+  componentDidMount() {
     this.resize();
-    window.addEventListener('load', this.resize);
+    window.addEventListener("load", this.resize);
+    window.addEventListener("resize", this.resize);
   }
-  componentWillReceiveProps () {
+  componentWillUnmount() {
+    window.removeEventListener("load", this.resize);
+    window.removeEventListener("resize", this.resize);
+  }
+  componentWillReceiveProps() {
     this.resize();
   }
   resize() {
     if (this.props.fit) {
-      let el = React.findDOMNode(this.refs.text)
-      let state = this.state
-      let width = el.offsetWidth || el.getComputedTextLength()
-      let height = el.offsetHeight || 24
-      if (state.width !== width || state.height !== height) {
-        this.setState({
-          width: width,
-          height: height
-        });
-      }
+      const text = React.findDOMNode(this.refs.text);
+      const container = React.findDOMNode(this.refs.container);
+      text.style.display = "inline-block";
+      const scale = (container.offsetWidth / text.offsetWidth);
+      const height = text.offsetHeight * scale;
+      text.style.display = "block";
+      this.setState({
+        scale,
+        height
+      });
     }
   }
   render() {
-    let Tag = "H" + this.props.size;
-    let viewBox = [
-      0, 0,
-      this.state.width,
-      this.state.height - 8
-    ].join(' ');
-    let styles = {
-      svg: {
-        width: '100%',
-        maxHeight: '100%',
-        fill: 'currentcolor',
-        overflow: 'visible'
+    const Tag = "H" + this.props.size;
+    const styles = {
+      container: {
+        display: "block",
+        width: "100%",
+        height: this.state.height
       },
       text: {
-        fontFamily: 'inherit',
-        fontSize: '1rem',
-        fontWeight: 'inherit',
-        textAnchor: 'middle'
+        fontSize: 16,
+        display: "block",
+        margin: "0",
+        padding: "0",
+        lineHeight: this.props.lineHeight,
+        transform: "scale(" + this.state.scale + ")",
+        transformOrigin: "center top"
       }
     };
     return this.props.fit
-    ? <div style={[this.context.styles.components.heading["h" + this.props.size], this.getStyles()]}>
-        <svg {...this.props}
-          viewBox={viewBox}
-          style={styles.svg}>
-          <text
-            ref='text'
-            x='50%'
-            y='13'
-            style={styles.text}>
-            {this.props.children}
-          </text>
-        </svg>
+    ? <div
+        ref="container"
+        style={[
+          this.context.styles.components.heading["h" + this.props.size],
+          this.getStyles(), styles.container]}>
+        <span
+          ref="text"
+          style={[styles.text, this.props.style]}>
+          {this.props.children}
+        </span>
       </div>
     : React.createElement(Tag, {
-        style: [this.context.styles.components.heading["h" + this.props.size], this.getStyles()]
-      }, this.props.children)
+      style: [this.context.styles.components.heading["h" + this.props.size], this.getStyles(), this.props.style]
+    }, this.props.children);
   }
 }
 
 Heading.defaultProps = {
-  size: 1
+  size: 1,
+  lineHeight: 1
+};
+
+Heading.propTypes = {
+  children: React.PropTypes.node,
+  size: React.PropTypes.number,
+  lineHeight: React.PropTypes.number
 };
 
 Heading.contextTypes = {
   styles: React.PropTypes.object
-}
+};
 
 export default Heading;

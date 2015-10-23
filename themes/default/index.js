@@ -1,14 +1,16 @@
 const colors = {
   primary: '#A9ECF8',
+  yellowTheme: '#fbd152',
   darkPrimary: '#49848E',
   secondary: 'black',
-  tertiary: 'white'
+  light: '#f2f2f2'
 };
 
 const fonts = {
   primary: 'Source Sans Pro',
   secondary: 'Open Sans Condensed',
-  tertiary: 'monospace'
+  tertiary: 'monospace',
+  segoe: 'SegoeUILight'
 };
 
 module.exports = {
@@ -17,10 +19,10 @@ module.exports = {
   global: {
     body: {
       background: colors.primary,
-      fontFamily: fonts.primary,
+      fontFamily: fonts.segoe,
       fontWeight: 'normal',
       fontSize: '2em',
-      color: colors.secondary,
+      color: colors.darkPrimary,
       overflow: 'hidden'
     },
     'html, body': {
@@ -81,16 +83,16 @@ module.exports = {
     bar: {
       container: {
         position: 'absolute',
-        height: '10px',
+        height: '4px',
         width: '100%',
-        bottom: 0,
+        top: 0,
         left: 0,
         transition: 'all 1s ease-in-out 0.2s',
         zIndex: 1000
       },
       bar: {
         height: '100%',
-        background: colors.tertiary,
+        background: colors.darkPrimary,
         transition: 'all 0.3s ease-out'
       }
     },
@@ -100,7 +102,7 @@ module.exports = {
         bottom: 10,
         right: 10,
         zIndex: 1000,
-        color: colors.tertiary
+        color: colors.light
       }
     }
   },
@@ -120,7 +122,7 @@ module.exports = {
       fontWeight: 'bold'
     },
     cite: {
-      color: colors.tertiary,
+      color: colors.light,
       display: 'block',
       clear: 'left',
       fontSize: '2em',
@@ -156,9 +158,9 @@ module.exports = {
     },
     heading: {
       h1: {
-        color: colors.tertiary,
+        color: colors.light,
         fontSize: '7.05em',
-        fontFamily: fonts.primary,
+        fontFamily: fonts.segoe,
         lineHeight: 1,
         fontWeight: '300',
         margin: 0,
@@ -167,7 +169,7 @@ module.exports = {
       h2: {
         color: colors.secondary,
         fontSize: '5.88em',
-        fontFamily: fonts.primary,
+        fontFamily: fonts.segoe,
         lineHeight: 1,
         fontWeight: '300',
         margin: 0
@@ -175,7 +177,7 @@ module.exports = {
       h3: {
         color: 'black',
         fontSize: '4.9em',
-        fontFamily: fonts.secondary,
+        fontFamily: fonts.segoe,
         lineHeight: 1,
         fontWeight: '300',
         margin: '0.5em auto'
@@ -183,7 +185,7 @@ module.exports = {
       h4: {
         color: 'black',
         fontSize: '3.82em',
-        fontFamily: fonts.primary,
+        fontFamily: fonts.segoe,
         lineHeight: 1,
         fontWeight: '300',
         margin: '0.5em auto'
@@ -191,7 +193,7 @@ module.exports = {
       h5: {
         color: 'black',
         fontSize: '3.19em',
-        fontFamily: fonts.primary,
+        fontFamily: fonts.segoe,
         lineHeight: 1.4,
         fontWeight: '300',
         margin: '0.5em auto'
@@ -199,7 +201,7 @@ module.exports = {
       h6: {
         color: 'black',
         fontSize: '2.44em',
-        fontFamily: fonts.primary,
+        fontFamily: fonts.segoe,
         lineHeight: 1.4,
         fontWeight: '300',
         margin: '0.5em auto'
@@ -213,8 +215,9 @@ module.exports = {
       textDecoration: 'none'
     },
     listItem: {
-      fontSize: '2.66em',
-      fontWeight: '300'
+      fontSize: '2.96em',
+      fontWeight: '500',
+      marginBottom: '10px'
     },
     list: {
       textAlign: 'left',
@@ -227,7 +230,7 @@ module.exports = {
     text: {
       color: 'black',
       fontSize: '2.66em',
-      fontFamily: fonts.primary,
+      fontFamily: fonts.segoe,
       margin: '0.25em auto'
     }
   }
