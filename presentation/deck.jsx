@@ -7,7 +7,6 @@ import {
 import preloader from '../src/utils/preloader';
 
 const images = {
-  splash: require('./images/splash.png'),
   questions: require('./images/questions.png'),
   thanks: require('./images/ironman-thanks.gif'),
   logo: require('./images/react-logo.png'),
@@ -22,16 +21,9 @@ const images = {
   htmlCssJS: require('./images/html-js-css.png')
 };
 
-preloader([images.splash, images.me, images.logo, images.thanks]);
+preloader([images.me, images.logo, images.thanks]);
 
 const slides = [
-  // Splash
-  {
-    slideProps: {
-      bgColor: 'yellowTheme',
-      bgImage: images.splash.replace('/', '')
-    }
-  },
   // Intro
   {
     component: Slides.Intro,
@@ -203,12 +195,6 @@ const slides = [
     slideProps: {
       bgImage: images.thanks.replace('/', ''),
       bgDarken: 0.6
-    }
-  },
-  {
-    slideProps: {
-      bgColor: 'yellowTheme',
-      bgImage: images.questions.replace('/', '')
     }
   }
 ];
